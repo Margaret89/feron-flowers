@@ -1,0 +1,20 @@
+.breadcrumb{
+	padding:12px 0px;
+	background-color: #ffffff;
+}
+.breadcrumb > li + li:before
+{content: "";
+	}
+.breadcrumb li{
+	display:inline;
+}
+.breadcrumb a{
+	text-decoration:underline;
+}
+.breadcrumb a:hover{
+	text-decoration:none;
+}
+.breadcrumb li.last a{
+	color:#000;
+	text-decoration:none;
+}
