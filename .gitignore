@@ -27,3 +27,10 @@ Desktop.ini
 .DS_Store*
 ehthumbs.db
 Icon?
+
+#bitrix
+upload
+!/bitrix
+/bitrix/*
+!/bitrix/php_interface/
+!/bitrix/templates/

@@ -1,0 +1,31 @@
+<?$APPLICATION->IncludeComponent(
+	"bitrix:search.title",
+	"inheader",
+	Array(
+		"CATEGORY_0" => array("iblock_catalog"),
+		"CATEGORY_0_TITLE" => "",
+		"CATEGORY_0_iblock_catalog" => array("5"),
+		"CATEGORY_OTHERS_TITLE" => "",
+		"CHECK_DATES" => "N",
+		"COMPOSITE_FRAME_MODE" => "A",
+		"COMPOSITE_FRAME_TYPE" => "AUTO",
+		"CONTAINER_ID" => "title-search",
+		"CONVERT_CURRENCY" => "Y",
+		"CURRENCY_ID" => "RUB",
+		"IBLOCK_ID" => array("5"),
+		"INPUT_ID" => "title-search-input",
+		"NUM_CATEGORIES" => "1",
+		"OFFERS_FIELD_CODE" => array("ID","CODE","XML_ID","NAME","TAGS","SORT","PREVIEW_TEXT","PREVIEW_PICTURE","DETAIL_TEXT","DETAIL_PICTURE","DATE_ACTIVE_FROM","ACTIVE_FROM","DATE_ACTIVE_TO","ACTIVE_TO","SHOW_COUNTER","SHOW_COUNTER_START","IBLOCK_TYPE_ID","IBLOCK_ID","IBLOCK_CODE","IBLOCK_NAME","IBLOCK_EXTERNAL_ID","DATE_CREATE","CREATED_BY","CREATED_USER_NAME","TIMESTAMP_X","MODIFIED_BY","USER_NAME",""),
+		"OFFERS_PROPERTY_CODE" => array("","CML2_LINK","CML2_ARTICLE",""),
+		"ORDER" => "date",
+		"PAGE" => "/search/index.php",
+		"PRICE_CODE" => array("Стоимость"),
+		"PRICE_VAT_INCLUDE" => "N",
+		"PRODUCT_QUANTITY_VARIABLE" => "quan",
+		"SHOW_INPUT" => "Y",
+		"SHOW_OTHERS" => "Y",
+		"TOP_COUNT" => "5",
+		"USE_LANGUAGE_GUESS" => "N",
+		"USE_PRODUCT_QUANTITY" => "Y"
+	)
+);?>

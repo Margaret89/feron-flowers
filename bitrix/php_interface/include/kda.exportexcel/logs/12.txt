@@ -1,0 +1,8 @@
+<pre>[KDAPHPExcel_Writer_Exception] 
+Could not open file /home/u182615/feron-flowersru/www for writing. (0)
+/home/u182615/feron-flowersru/www/bitrix/modules/kda.exportexcel/lib/PHPExcel/PHPExcel/Writer/CSV.php:113
+#0: KDAPHPExcel_Writer_CSV-&gt;save(string)
+	/home/u182615/feron-flowersru/www/bitrix/modules/kda.exportexcel/classes/general/export.php:419
+#1: CKDAExportExcel-&gt;Export()
+	/home/u182615/feron-flowersru/www/bitrix/php_interface/include/kda.exportexcel/cron_frame.php:37
+</pre>

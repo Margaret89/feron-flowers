@@ -1,0 +1,1 @@
+<a href="tel:88126041953">8(921)955-23-22</a> <span style="color: #ffffff;">Интернет-магазин</span>
