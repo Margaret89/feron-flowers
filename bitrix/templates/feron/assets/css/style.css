@@ -4489,7 +4489,7 @@ height:449px;}
 .aroundowlslider1 {min-height: 405px;}
 
 /* nav */
-.aroundowlslider1 .hidecontrols {
+/* .aroundowlslider1 .hidecontrols {
   overflow: hidden; }
 
 .aroundowlslider1 .owl-nav {
@@ -4549,7 +4549,7 @@ height:449px;}
 .aroundowlslider1 .owl-nav div.owl-next span:hover .icon {
   background-position: -7px -121px; }
 
-/* dots */
+-- dots 
 .aroundowlslider1 .owl-dots {
   position: absolute;
   bottom: 9%;
@@ -4568,7 +4568,7 @@ height:449px;}
 .aroundowlslider1 .owl-dots .owl-dot.active {
   background-color: #EE8131; }
 
-/* text */
+-- text 
 .aroundowlslider1 .tmsg {
   position: absolute;
   top: 15%;
@@ -4594,13 +4594,13 @@ height:449px;}
   font-size: 14px;
   color: #707070; }
 
-/* video */
+-- video 
 .aroundowlslider1 .item.video video {
   width: 100%;
   height: auto;
   cursor: default; }
 
-/* priduct */
+-- priduct 
 .aroundowlslider1 .item.product .text {
   padding: 20px 40px; }
 
@@ -4744,7 +4744,7 @@ height:449px;}
     font-size: 14px; }
   body.adaptive .aroundowlslider1 .owl-dots .owl-dot {
     width: 12px;
-    height: 12px; } }
+    height: 12px; } } */
 
 .brandslist.mainstyles {
   margin-top: 25px; }

@@ -46,7 +46,7 @@
 .aroundowlslider1 .owl-nav div span .icon{
 	width:7px;
 	height:10px;
-	margin-top:5px;
+	margin-top:-5px;
 	margin-left:9px;
 }
 .aroundowlslider1 .owl-nav div.owl-prev span .icon{
