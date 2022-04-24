@@ -3296,7 +3296,7 @@ height:449px;}
 .centering .info {
   width: 50px; }
 
-.catalogmenucolumn {
+/* .catalogmenucolumn {
   float: left;
   min-width: 250px; }
 
@@ -3417,9 +3417,9 @@ height:449px;}
   border-bottom: 1px solid #F3F3F3; }
 
 .catalogmenu li ul {
-  position: absolute;
+   position: absolute;
   top: 0px;
-  display: none;
+  display: none; 
   max-width: 248px;
   height: auto;
   background-color: #fff;
@@ -3526,7 +3526,7 @@ height:449px;}
   background-position: 0px -545px; }
 
 .catalogmenu .elementinmenu .more a:hover .icon {
-  background-position: -21px -545px; }
+  background-position: -21px -545px; } */
 
 /* mobile menu */
 .catalogmenusmall {
@@ -4260,9 +4260,7 @@ height:449px;}
     display: table-cell;
     vertical-align: middle; } }
 
-.aroundjssorslider1 {
-  min-height: 405px;
-  margin-left: 252px; }
+.aroundjssorslider1 {min-height: 405px;}
 
 .aroundjssorslider1 .banner {
   position: relative; }
@@ -4488,9 +4486,7 @@ height:449px;}
 .item.video video {
   transform: none !important; }
 
-.aroundowlslider1 {
-  min-height: 405px;
-  margin-left: 252px; }
+.aroundowlslider1 {min-height: 405px;}
 
 /* nav */
 .aroundowlslider1 .hidecontrols {
@@ -7144,7 +7140,7 @@ input.btn3[type="reset"]:active {
   background-position: -12px -268px; }
 
 /* /checkbox and radio buttons */
-/* header */
+/* header
 .tline {
   width: 100%;
   height: 8px;
@@ -7156,9 +7152,7 @@ input.btn3[type="reset"]:active {
 
 .authandlocation {
   float: right; }
-.header {
-	background-color: #810125;
-}
+
 .header .logo a,
 .header .logo a:hover {
   text-decoration: none; }
@@ -7201,7 +7195,7 @@ input.btn3[type="reset"]:active {
   width: 8px;
   height: 4px;
   margin-left: 12px;
-  background-position: 0px -4px; }
+  background-position: 0px -4px; } */
 
 /* /header */
 /* content */
@@ -7643,14 +7637,14 @@ input.btn1[type="submit"],
 input.btn1[type="button"],
 input.btn1[type="reset"],
 .add2basketform .add2basket,
-.catalogmenu li.first:hover > a,
+/* .catalogmenu li.first:hover > a,
 .catalogmenu li.first.hover > a,
 .catalogmenu li.sub:hover > a,
 .catalogmenu li.sub.hover > a,
 .catalogmenu a.first:hover,
 .catalogmenu a.first.hover,
 .catalogmenu a.sub:hover,
-.catalogmenu a.sub.hover,
+.catalogmenu a.sub.hover, */
 #jssor_slider1 .navi .av,
 .pmenu a:hover,
 #jssor_slider1 .navi div:hover, #jssor_slider1 .navi .av:hover,

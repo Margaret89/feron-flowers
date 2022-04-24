@@ -64,6 +64,11 @@ $APPLICATION->IncludeComponent(
 	}
 }
 
+
+// echo '<pre>';
+// print_r($arResult);
+// echo '</pre>';
+
 if(is_array($arResult) && count($arResult)>0) {
 	?><div class="catalogmenucolumn"><?
 		?><ul class="catalogmenu clearfix"><?
@@ -86,8 +91,16 @@ if(is_array($arResult) && count($arResult)>0) {
 				}
 				if($arItem['IS_PARENT']){
 					if($arItem['DEPTH_LEVEL'] == 1){
-						?><li class="first<?if($index>$max):?> more<?endif;?><?if($arItem['IS_LAST_LVL1']=='Y'):?> lastchild<?endif;?>"><a href="<?=$arItem['LINK']?>" class="first<?if($arItem['SELECTED']):?> selected<?endif?>" title="<?=$arItem['TEXT']?>"><?=$arItem['TEXT']?><i class="menu icon pngicons"></i></a><?
-							?><ul class="lvl<?if($arItem['DEPTH_LEVEL']>3):?>4<?else:?><?=($arItem['DEPTH_LEVEL']+1)?><?endif;?>"><?
+						?><li class="first<?if($index>$max):?> more<?endif;?><?if($arItem['IS_LAST_LVL1']=='Y'):?> lastchild<?endif;?>">
+						<a href="<?=$arItem['LINK']?>" class="first<?if($arItem['SELECTED']):?> selected<?endif?>" title="<?=$arItem['TEXT']?>">
+							<?if($arItem['ICON']){?>
+								<div class="menu-icon">
+									<?=$arItem['ICON']?>
+								</div>
+							<?}?>
+							<?=$arItem['TEXT']?><i class="menu icon pngicons"></i>
+						</a>
+						<ul class="lvl<?if($arItem['DEPTH_LEVEL']>3):?>4<?else:?><?=($arItem['DEPTH_LEVEL']+1)?><?endif;?>"><?
 						$index++;
 					} else {
 						?><li class="sub<?if($arItem['SELECTED']):?> selected<?endif?>"><a href="<?=$arItem['LINK']?>" class="sub" title="<?=$arItem['TEXT']?>"><?=$arItem['TEXT']?><i class="menu icon pngicons"></i></a><?
@@ -95,7 +108,16 @@ if(is_array($arResult) && count($arResult)>0) {
 					}
 				} else {
 					if($arItem['DEPTH_LEVEL'] == 1){
-						?><li class="first<?if($index>$max):?> more<?endif;?><?if($arItem['IS_LAST_LVL1']=='Y'):?> lastchild<?endif;?>"><a href="<?=$arItem['LINK']?>" class="first<?if($arItem['SELECTED']):?> selected<?endif?>" title="<?=$arItem['TEXT']?>"><?=$arItem['TEXT']?></a></li><?
+						?><li class="first<?if($index>$max):?> more<?endif;?><?if($arItem['IS_LAST_LVL1']=='Y'):?> lastchild<?endif;?>">
+							<a href="<?=$arItem['LINK']?>" class="first<?if($arItem['SELECTED']):?> selected<?endif?>" title="<?=$arItem['TEXT']?>">
+								<?if($arItem['ICON']){?>
+									<div class="menu-icon">
+										<?=$arItem['ICON']?>
+									</div>
+								<?}?>
+								<?=$arItem['TEXT']?>
+							</a>
+						</li><?
 						$index++;
 					} else {
 						?><li class="sub<?if($arItem['SELECTED']):?> selected<?endif?>"><a href="<?=$arItem['LINK']?>" class="sub" title="<?=$arItem['TEXT']?>"><?=$arItem['TEXT']?></a></li><?

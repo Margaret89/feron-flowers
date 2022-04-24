@@ -13,6 +13,28 @@ if( is_array($arResult) && count($arResult)>0 ){
 	}
 	$arResult[$last_key_lvl1]['IS_LAST_LVL1'] = 'Y';
 
+
+	// Добавляем иконки в меню для первого уровня
+	$arIcons = array();
+	$arFilter = array('IBLOCK_ID' => 5,'DEPTH_LEVEL' => 1);
+	$arSect = array('ID', 'NAME', 'DESCRIPTION');
+	$rsSect = CIBlockSection::GetList(array('SORT' => 'asc'),$arFilter, false, $arSect);
+	while ($arSect = $rsSect->GetNext())
+	{
+		$arIcons[$arSect['NAME']] = $arSect['~DESCRIPTION'];
+	}
+
+
+	foreach($arResult as &$arItem){
+		if($arItem['DEPTH_LEVEL'] == 1){
+			if( $arItem['TEXT'] == 'НОВИНКИ'){
+				$arItem['ICON'] = '<svg class="icon ic-new" width="19" height="20"><use xlink:href="/bitrix/templates/feron/assets/sprites/sprite.svg#ic-new"></use></svg>';
+			}else{
+				$arItem['ICON'] = $arIcons[$arItem['TEXT']];
+			}
+		}
+	}
+
 	////////////////////////////////// element in menu //////////////////////////////////
 	if(CModule::IncludeModule('iblock') && IntVal($arParams['IBLOCK_ID'])>0 && $arParams['RSGOPRO_PROPCODE_ELEMENT_IN_MENU']!=''){
 		foreach($arResult as $key1 => $arItem1){

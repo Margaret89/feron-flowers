@@ -12,11 +12,13 @@ if ($isAjax) {
 }
 
 ?>
-
+					</div>
 				</div>
 			</div>
-		</div><!-- /content -->
+		</main>
 	</div><!-- /body -->
+
+
 	<script type="text/javascript">!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?166",t.onload=function(){VK.Retargeting.Init("VK-RTRG-451465-2kMxm"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script><noscript><img src="https://vk.com/rtrg?p=VK-RTRG-451465-2kMxm" style="position:fixed; left:-999px;" alt=""/></noscript>
 	<script type="text/javascript">RSGoPro_SetSet();</script>
 	<div id="footer" class="footer"><!-- footer -->

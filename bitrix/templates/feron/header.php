@@ -180,7 +180,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<div id="panel"><?=$APPLICATION->ShowPanel()?></div>
 
 	<div class="body"><!-- body -->
-		<di`v class="header">
+		<div class="header">
 			<div class="header-top">
 				<div class="container-fluid">
 					<div class="row">
@@ -358,36 +358,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</div>
 				</div>
 			</div>
-		</di>
+		</div>
 	
 	
-		<div class="centering">
-				<div class="centeringin clearfix">
-					<?$APPLICATION->IncludeFile(
-						SITE_DIR."include/header/menu.php",
-						Array(),
-						Array("MODE"=>"html")
-					);?>
-					
-				</div>
-			</div>
-		<?php if ($IS_MAIN == 'N'): ?>
-			<div id="title" class="title">
-				<div class="centering">
-					<div class="centeringin clearfix">
+		<main class="main">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-3">
 						<?$APPLICATION->IncludeFile(
-							SITE_DIR."include/header/breadcrumb.php",
+							SITE_DIR."include/header/menu.php",
 							Array(),
 							Array("MODE"=>"html")
 						);?>
-						<h1 class="pagetitle"><?$APPLICATION->ShowTitle(false)?></h1>
 					</div>
-				</div>
-			</div><!-- /title -->
-		<?php endif; ?>
-		<div id="content" class="content">
-			<div class="centering">
-				<div class="centeringin clearfix">
+
+					<div class="col-9">
+						<?php if ($IS_MAIN == 'N'): ?>
+							<?$APPLICATION->IncludeFile(
+								SITE_DIR."include/header/breadcrumb.php",
+								Array(),
+								Array("MODE"=>"html")
+							);?>
+							
+							<div class="page-header">
+								<h1><?$APPLICATION->ShowTitle(false)?></h1>
+							</div>
+						<?php endif; ?>
+
 
 <?php
 if ($isAjax) {

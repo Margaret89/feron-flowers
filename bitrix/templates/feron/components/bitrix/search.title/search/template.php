@@ -14,7 +14,7 @@ $CONTAINER_ID = CUtil::JSEscape($CONTAINER_ID);
 if($arParams["SHOW_INPUT"]!=="N"){?>
 	<div id="<?=$CONTAINER_ID?>" class="form-search-wrap">
 		<form class="form-search">
-			<input class="text" id="<?=$INPUT_ID?>" type="text" name="q" value="" autocomplete="off" placeholder="<?=GetMessage("RSGOPRO_PLACEHOLDER")?>" />
+			<input class="text" id="<?=$INPUT_ID?>" type="text" name="q" value="" autocomplete="off" placeholder="<?=GetMessage("RSGOPRO_PLACEHOLDER")?>" title="<?=GetMessage("RSGOPRO_PLACEHOLDER")?>"/>
 			
 			<button type="submit" name="s">
 				<svg class="icon ic-search" width="16" height="16">

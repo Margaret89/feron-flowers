@@ -17,7 +17,8 @@ if ($APPLICATION->GetCurPage(true) == SITE_DIR.'index.php')
 	"DELAY" => "N",
 	"ALLOW_MULTI_SELECT" => "N",
 	"CATALOG_PATH" => "/catalog/",
-	"MAX_ITEM" => "9",
+	"MAX_ITEM" => "1000",
+	"RSGOPRO_MAX_ITEM" => "1000",
 	"IS_MAIN" => $IS_MAIN
 	),
 	false

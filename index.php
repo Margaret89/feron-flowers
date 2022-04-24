@@ -120,7 +120,8 @@ Array(
 		"TOP_DEPTH" => "3",
 		"VIEW_MODE" => "LINE"
 	)
-);?>&nbsp;<?$APPLICATION->IncludeComponent(
+);?><?
+/*$APPLICATION->IncludeComponent(
 	"bitrix:news.line",
 	"main",
 	Array(
@@ -145,7 +146,8 @@ false,
 Array(
 	'ACTIVE_COMPONENT' => 'Y'
 )
-);?>&nbsp;<?
+);*/
+?><?
 if($IS_AJAXPAGES=='Y' || $IS_SORTERCHANGE=='Y')
 {
 	$APPLICATION->RestartBuffer();
