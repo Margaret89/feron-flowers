@@ -1,0 +1,17 @@
+.footer-menu__title{
+	font-size: 2rem;
+	font-weight: 600;
+	color: #000;
+	margin-bottom: 27px;
+}
+
+.footer-menu__item{margin: 13px 0;}
+
+.footer-menu__item a{
+	font-size: 1.4rem;
+	font-weight: 600;
+	color:#868686;
+	text-decoration:none;
+}
+
+.footer-menu__item a:hover{text-decoration: underline;}

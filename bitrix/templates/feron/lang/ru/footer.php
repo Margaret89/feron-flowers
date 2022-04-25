@@ -1,3 +1,3 @@
 <?
 $MESS['RSGOPRO.RECALL'] = 'Заказать звонок';
-$MESS['RSGOPRO.FEEDBACK'] = 'Обратная связь';
+$MESS['RSGOPRO.FEEDBACK'] = 'Обратный звонок';

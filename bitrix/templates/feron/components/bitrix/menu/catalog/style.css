@@ -80,15 +80,9 @@
 	margin-left:8px;
 	background-position:0px -83px;
 }
-.catalogmenu li a.first{
-	white-space:nowrap;
-	text-overflow:ellipsis;
-	padding:20px 45px 18px 20px;
-	overflow:hidden;
-}
-.catalogmenu li a.first.selected{
-	text-decoration:underline;
-}
+
+.catalogmenu li a.first{padding:20px 45px 18px 20px;}
+.catalogmenu li a.first.selected{text-decoration:underline;}
 
 .catalogmenu li a.first{
 	display: -webkit-box;

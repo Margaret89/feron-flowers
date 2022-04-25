@@ -5,7 +5,8 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 $this->setFrameMode(true);
 
 if (is_array($arResult["SECTIONS"]) && count($arResult["SECTIONS"]) > 0) {
-	?><div class="mainsections clearfix"><?
+?>
+	<div class="mainsections"><?
 		if( isset($arParams['BLOCK_NAME']) && $arParams['BLOCK_NAME']!='' )
 		{
 			?><div class="title"><?=$arParams['BLOCK_NAME']?></div><?
@@ -31,13 +32,18 @@ if (is_array($arResult["SECTIONS"]) && count($arResult["SECTIONS"]) > 0) {
 					$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_EDIT"));
 					$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_DELETE"), array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_CONFIRM')));
 					?><li class="section" id="<?=$this->GetEditAreaId($arSection['ID']);?>"><?
-						?><a href="<?=$arSection['SECTION_PAGE_URL']?>"><img src="<?
+						?>
+						<a href="<?=$arSection['SECTION_PAGE_URL']?>"><img src="<?
 						if(empty($arSection['PICTURE']['SRC']))
 							echo $arResult['NO_PHOTO']['src'];
 						else
 							echo $arSection['PICTURE']['SRC'];
 						?>" alt="<?=$arSection['PICTURE']['ALT']?>" title="<?=$arSection['PICTURE']['TITLE']?>" /></a><?
-						?><a class="parent" href="<?=$arSection['SECTION_PAGE_URL']?>" title="<?=$arSection['NAME']?>"><?=$arSection['NAME']?></a><?
+						?>
+						<div class="section-title">
+							<a class="parent" href="<?=$arSection['SECTION_PAGE_URL']?>" title="<?=$arSection['NAME']?>"><?=$arSection['NAME']?></a>
+						</div>
+						<?
 						if( ($arSection["RIGHT_MARGIN"]-$arSection['LEFT_MARGIN'])>1 && $arParams['SHOW_COUNT_LVL1']>0 && $arParams['TOP_DEPTH']>1 ) // is_parent
 						{
 							?><ul class="subsections1" id="<?=$arSection['ID']?>"><?
@@ -47,7 +53,7 @@ if (is_array($arResult["SECTIONS"]) && count($arResult["SECTIONS"]) > 0) {
 				} else {
 					if($index2>$arParams['SHOW_COUNT_LVL2'])
 						continue;
-					?><li><a href="<?=$arSection['SECTION_PAGE_URL']?>" title="<?=$arSection['NAME']?>"><?=$arSection['NAME']?></a></li><?
+					?><li><a href="<?=$arSection['SECTION_PAGE_URL']?>" title="<?=$arSection['NAME']?>"><i class="menu icon pngicons"></i><?=$arSection['NAME']?></a></li><?
 					$index2++;
 				}
 				$previousLevel = $arSection['DEPTH_LEVEL'];

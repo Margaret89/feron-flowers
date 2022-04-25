@@ -16,7 +16,9 @@ $(document).ready(function(){
 			navClass			: ['owl-prev', 'owl-next'],
 			autoplaySpeed		: RSGOPRO_change_speed,
 			autoplayTimeout		: RSGOPRO_change_delay,
-			smartSpeed			: RSGOPRO_change_speed
+			smartSpeed			: RSGOPRO_change_speed,
+			dots				: false
+
 		});
 	}
 	

@@ -12,19 +12,33 @@ if(is_array($arResult['ITEMS']) && count($arResult['ITEMS'])>0)
 				if($arItem['PROPERTIES'][$arParams['RSGOPRO_BANNER_TYPE']]['VALUE_XML_ID']=='text')
 				{
 					?><div class="item" id="<?=$this->GetEditAreaId($arItem['ID']);?>"><?
-						?><a href="<?=$arItem['PROPERTIES'][$arParams['RSGOPRO_LINK']]['VALUE']?>"<?if($arItem['PROPERTIES'][$arParams['RSGOPRO_BLANK']]['VALUE']!=''):?> target="_blank"<?endif;?>><?
-							?><div class="banner"><?
+						?><div>
+							<div class="banner"><?
 								?><img u="image" src="<?=$arItem['DETAIL_PICTURE']['SRC']?>" border="0" alt="<?=$arItem['DETAIL_PICTURE']['ALT']?>" title="<?=$arItem['DETAIL_PICTURE']['TITLE']?>" /><?
-								?><div class="tmsg"><?
-									if(isset($arItem['DISPLAY_PROPERTIES'][$arParams['RSGOPRO_TITLE1']]['VALUE']))
-										?><div class="title1"><?=$arItem['DISPLAY_PROPERTIES'][$arParams['RSGOPRO_TITLE1']]['DISPLAY_VALUE']?></div><?
-									if(isset($arItem['DISPLAY_PROPERTIES'][$arParams['RSGOPRO_TITLE2']]['VALUE']))
-										?><div class="title2"><?=$arItem['DISPLAY_PROPERTIES'][$arParams['RSGOPRO_TITLE2']]['DISPLAY_VALUE']?></div><?
-									if(isset($arItem['DISPLAY_PROPERTIES'][$arParams['RSGOPRO_TEXT']]['VALUE']))
-										?><div class="message"><?=$arItem['DISPLAY_PROPERTIES'][$arParams['RSGOPRO_TEXT']]['DISPLAY_VALUE']?></div><?
-								?></div><?
-							?></div><?
-						?></a><?
+								?>
+								<?if(isset($arItem['DISPLAY_PROPERTIES'][$arParams['RSGOPRO_TITLE1']]['VALUE']) || isset($arItem['DISPLAY_PROPERTIES'][$arParams['RSGOPRO_TITLE2']]['VALUE']) || isset($arItem['DISPLAY_PROPERTIES'][$arParams['RSGOPRO_TEXT']]['VALUE'])){?>
+									<div class="tmsg">
+										<div class="tmsg__content">
+											<?if(isset($arItem['DISPLAY_PROPERTIES'][$arParams['RSGOPRO_TITLE1']]['VALUE'])){?>
+												<div class="title1"><?=$arItem['DISPLAY_PROPERTIES'][$arParams['RSGOPRO_TITLE1']]['DISPLAY_VALUE']?></div>
+											<?}?>
+	
+											<?if(isset($arItem['DISPLAY_PROPERTIES'][$arParams['RSGOPRO_TITLE2']]['VALUE'])){?>
+												<div class="title2"><?=$arItem['DISPLAY_PROPERTIES'][$arParams['RSGOPRO_TITLE2']]['DISPLAY_VALUE']?></div>
+											<?}?>
+	
+											<?if(isset($arItem['DISPLAY_PROPERTIES'][$arParams['RSGOPRO_TEXT']]['VALUE'])){?>
+												<div class="message"><?=$arItem['DISPLAY_PROPERTIES'][$arParams['RSGOPRO_TEXT']]['DISPLAY_VALUE']?></div>
+											<?}?>
+										</div>
+
+										<?if($arItem['PROPERTIES'][$arParams['RSGOPRO_LINK']]['VALUE']){?>
+											<a href="<?=$arItem['PROPERTIES'][$arParams['RSGOPRO_LINK']]['VALUE']?>" class="btn"><?=GetMessage('T_BTN_CATALOG')?></a>
+										<?}?>
+									</div>
+								<?}?>
+							</div><?
+						?></div><?
 					?></div><?
 				} elseif($arItem['PROPERTIES'][$arParams['RSGOPRO_BANNER_TYPE']]['VALUE_XML_ID']=='banner') {
 					?><div class="item" id="<?=$this->GetEditAreaId($arItem['ID']);?>"><?

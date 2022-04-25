@@ -1,15 +1,19 @@
-.mainsections{
-	width:80%;
-	float:right;
-	margin-top:23px;
-}
-.mainsections ul {
+.mainsections{margin-top:30px;}
+.mainsections .section-title{margin-top: 16px;}
+
+.mainsections > ul {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
 	list-style: none;
 	padding-left: 0px;
-	margin-top: 0;
+	margin-top: 16;
 	margin-bottom: 0px;
 }
 .mainsections ul > li {
+	display: block;
 	list-style-type: none;
 }
 .mainsections .title{
@@ -21,20 +25,32 @@
 .mainsections li.section{
 	display:block;
 	width:25%;
-	float:left;
 	margin:-1px 0 0 -1px;
 	padding:17px;
-	border:1px solid #F3F3F3;
+	border:1px solid #eee;
 }
 .mainsections a{
 	font:13px Opensans,Arial,Helvetica,sans-serif;
 	line-height:24px;
+	position: relative;
+}
+.mainsections a .icon.menu{
+	position: absolute;
+	top: 50%;
+	left: -16px;
+	width: 5px;
+	height: 8px;
+	margin-top: -4px;
+	background-position: 0px -83px;
 }
 .mainsections a.parent{
-	display:block;
-	font-size:18px;
-	color:#ee8131;
+	font-size: 1.6rem;
+	font-weight: 600;
+	color: #000;
+	transition: color 0.2s ease 0s;
 }
+
+.mainsections a.parent:hover{color: #9D002C;}
 
 @media screen and (max-width: 1010px){
 	body.adaptive .mainsections{
