@@ -277,9 +277,9 @@
 .catalogmenusmall{
 	display:none;
 }
-.catalogmenusmall li.parent{
+/* .catalogmenusmall li.parent{
 	background-color:#F3F3F3;
-}
+} */
 .catalogmenusmall a.parent{
 	padding:11px 12px;
 	color:#000;
@@ -296,22 +296,53 @@
 }
 
 
-@media screen and (min-width:1010px){
+@media screen and (min-width:992){
 	body.adaptive .catalogmenu li ul.first.show{
 		display:block;
 	}
 }
-@media screen and (max-width:1010px){
+@media screen and (max-width:991px){
 	body.adaptive .catalogmenu li:hover > ul.lvl4,
 	body.adaptive .catalogmenu li.hover > ul.lvl4,
 	body.adaptive .catalogmenu li:hover > ul.lvl5,
 	body.adaptive .catalogmenu li.hover > ul.lvl5{
 		display:none;
 	}
-	body.adaptive .catalogmenu li ul.first.show{
-		display:none;
+
+	.catalogmenucolumn{
+		width: 100vw;
+		height: calc(100vh - 50px);
+		background: #fff;
+		position: fixed;
+		top: 50px;
+		right: 100%;
+		z-index: 1000;
+		transition: right 0.3s ease 0s;
+		overflow-y: auto;
 	}
+
+	.catalogmenucolumn.open{right: 0;}
+	.catalogmenucolumn  ul.noned{display: block;}
+	.catalogmenusmall a.parent{display: none;}
+	.catalogmenusmall li.parent{background: #fff;}
+
+	.catalogmenusmall a{
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		padding: 20px 20px 18px 20px;
+	}
+
+	.catalogmenusmall a .icon{fill: #969696;}
+	.catalogmenucolumn ul > li{border-bottom: 1px solid #F3F3F3;}
+
+	body.adaptive .catalogmenucolumn .catalogmenu{display:none;}
+	body.adaptive .catalogmenucolumn .catalogmenusmall{display:block;}
 }
+
 @media screen and (max-width:760px){
 	body.adaptive .catalogmenu li:hover > ul.lvl3,
 	body.adaptive .catalogmenu li.hover > ul.lvl3,
@@ -322,17 +353,7 @@
 		display:none;
 	}
 }
-@media screen and (max-width:605px){
-	body.adaptive .catalogmenucolumn{
-		float:none;
-	}
-	body.adaptive .catalogmenucolumn .catalogmenu{
-		display:none;
-	}
-	body.adaptive .catalogmenucolumn .catalogmenusmall{
-		display:block;
-	}
-}
+
 
 .catalogmenu2 li.first:hover > a,
 .catalogmenu2 li.first.hover > a,

@@ -3,11 +3,11 @@
 <div class="subscribe" id="footersubscribe">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-4">
+			<div class="col-md-4">
 				<div class="subscribe__label"><?=GetMessage('subscr_title')?></div>
 			</div>
 
-			<div class="col-8">
+			<div class="col-md-8">
 				<?$frame = $this->createFrame('footersubscribe', false)->begin();?>
 					<form action="<?=$arResult['FORM_ACTION']?>" class="subscribe-form">
 						<?foreach($arResult['RUBRICS'] as $itemID => $itemValue){?>

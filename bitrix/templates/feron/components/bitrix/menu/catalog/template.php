@@ -65,12 +65,8 @@ $APPLICATION->IncludeComponent(
 }
 
 
-// echo '<pre>';
-// print_r($arResult);
-// echo '</pre>';
-
 if(is_array($arResult) && count($arResult)>0) {
-	?><div class="catalogmenucolumn"><?
+	?><div class="catalogmenucolumn js-catalogmenucolumn"><?
 		?><ul class="catalogmenu clearfix"><?
 			?><li class="parent"><a href="<?=$arParams['CATALOG_PATH']?>" class="parent"><?=GetMessage('RSGOPRO_CATALOG')?><i class="menu icon<?if($arParams['IS_MAIN']=='Y'):?> show<?endif;?>"></i></a><?
 			?><ul class="first clearfix lvl1<?if($arParams['IS_MAIN']=='Y'):?> show<?endif;?>"><?
@@ -136,15 +132,24 @@ if(is_array($arResult) && count($arResult)>0) {
 				?><li class="first morelink lastchild"><a href="<?=$arParams['CATALOG_PATH']?>" class="first morelink"><?=GetMessage('RSGOPRO_MORE')?><i class="icon pngicons"></i></a></li><?
 			}
 			?></ul></li><?
-		?></ul><?
+		?></ul>
 		
-		?><ul class="catalogmenusmall clearfix"><?
-			?><li class="parent"><a href="<?=$arParams['CATALOG_PATH']?>" class="parent"><?=GetMessage('RSGOPRO_CATALOG')?><i class="menu icon"></i></a><?
-			?><ul class="first clearfix lvl1 noned"><?
+		<ul class="catalogmenusmall clearfix">
+			<li class="parent"><a href="<?=$arParams['CATALOG_PATH']?>" class="parent"><?=GetMessage('RSGOPRO_CATALOG')?><i class="menu icon"></i></a>
+			<ul class="first clearfix lvl1"><?
 				foreach($arResult as $arItem){
-					if($arItem['DEPTH_LEVEL'] == 1){
-						?><li class="first<?if($arItem['IS_LAST_LVL1']=='Y'):?> lastchild<?endif;?>"><a href="<?=$arItem['LINK']?>" class="first<?if($arItem['SELECTED']):?> selected<?endif?>"><?=$arItem['TEXT']?></a></li><?
-					}
+					if($arItem['DEPTH_LEVEL'] == 1){?>
+						<li class="first<?if($arItem['IS_LAST_LVL1']=='Y'):?> lastchild<?endif;?>">
+							<a href="<?=$arItem['LINK']?>" class="first<?if($arItem['SELECTED']):?> selected<?endif?>">
+								<?if($arItem['ICON']){?>
+									<div class="menu-icon">
+										<?=$arItem['ICON']?>
+									</div>
+								<?}?>
+								<?=$arItem['TEXT']?>
+							</a>
+						</li>
+					<?}
 				}
 			?></ul><?
 		?></ul><?

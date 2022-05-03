@@ -47,4 +47,46 @@ $(document).ready(function() {
 		}
 	});
 
+	// Открыть/Закрыть контакты на мобильнике
+	var openHeaderContacts = false;
+	var openMenu = false;
+
+	$('.js-mobile-contacts').on('click', function(){
+		if(openHeaderContacts == false){
+			if(openMenu == true){
+				$('.js-catalogmenucolumn').removeClass('open');
+				$('.js-body').removeClass('no-scroll');
+				$('.js-btn-menu').removeClass('active');
+				openMenu = false;
+			}
+
+			openHeaderContacts = true;
+		}else{
+			openHeaderContacts = false;
+		}
+
+		$(this).toggleClass('active');
+		$('.js-header-contacts').toggleClass('open');
+		$('.js-body').toggleClass('no-scroll');
+	});
+
+	// Открыть/Закрыть контакты на мобильнике
+	$('.js-btn-menu').on('click', function(){
+		if(openMenu == false){
+			if(openHeaderContacts == true){
+				$('.js-header-contacts').removeClass('open');
+				$('.js-body').removeClass('no-scroll');
+				$('.js-mobile-contacts').removeClass('active');
+				openHeaderContacts = false;
+			}
+
+			openMenu = true;
+		}else{
+			openMenu = false;
+		}
+
+		$(this).toggleClass('active');
+		$('.js-catalogmenucolumn').toggleClass('open');
+		$('.js-body').toggleClass('no-scroll');
+	});
 }); 

@@ -36,7 +36,7 @@ if ($isAjax) {
 	<div id="footer" class="footer">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-3">
+				<div class="col-md-6 col-lg-3 order-1">
 					<?if(!CSite::InDir('/index.php')){?><a href="/"><?}?>
 						<div class="footer__logo">
 							<?$APPLICATION->IncludeFile(
@@ -80,7 +80,7 @@ if ($isAjax) {
 					</div>
 				</div>
 
-				<div class="col-6">
+				<div class="col-lg-6 order-3 order-lg-2 d-none d-md-block">
 					<?$APPLICATION->IncludeComponent("bitrix:menu", "footer-cat-menu", Array(
 	"ROOT_MENU_TYPE" => "footercatalog",	// Тип меню для первого уровня
 		"MENU_CACHE_TYPE" => "A",	// Тип кеширования
@@ -101,7 +101,7 @@ if ($isAjax) {
 );?>
 				</div>
 
-				<div class="col-3">
+				<div class="col-md-6 col-lg-3 order-2 order-lg-3">
 					<?$APPLICATION->IncludeComponent(
 						"bitrix:menu", 
 						"footer-menu", 
@@ -130,7 +130,7 @@ if ($isAjax) {
 
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-6">
+				<div class="col-lg-6">
 					<div class="footer__law">
 						<?$APPLICATION->IncludeFile(
 							SITE_DIR."include/footer/law.php",

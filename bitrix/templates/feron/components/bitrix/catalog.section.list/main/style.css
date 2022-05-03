@@ -58,16 +58,18 @@
 		float:none;
 	}
 }
-@media screen and (max-width: 750px){
-	body.adaptive .mainsections li.section{
-		width:33%;
-	}
-}
-@media screen and (max-width: 480px){
+@media screen and (max-width: 767px){
 	body.adaptive .mainsections li.section{
 		width:50%;
 	}
-	body.adaptive .mainsections .subsections{
-		display:none;
+}
+@media screen and (max-width: 480px){
+	body.adaptive .mainsections li.section{width:100%;}
+	body.adaptive .mainsections .subsections{display:none;}
+	.mainsections li.section{margin: 0 0 6px 0;}
+
+	.mainsections .section > a{
+		display: block;
+		text-align: center;
 	}
 }

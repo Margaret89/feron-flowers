@@ -171,16 +171,47 @@ src="https://www.facebook.com/tr?id=505726086647009&ev=PageView
 <noscript><div><img src="https://mc.yandex.ru/watch/87405445" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 </head>
-<body class="prop_option_<?=$prop_option?><?if($adaptive == 'Y'):?> adaptive<?endif;?>">
+<body class="prop_option_<?=$prop_option?><?if($adaptive == 'Y'):?> adaptive<?endif;?> js-body">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVL2BPX";
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-	<div id="panel"><?=$APPLICATION->ShowPanel()?></div>
+	<?/*<div id="panel"><?=$APPLICATION->ShowPanel()?></div>*/?>
+	<?=$APPLICATION->ShowPanel()?>
 
 	<div class="body"><!-- body -->
 		<div class="header">
+			<div class="header-mobile">
+				<div class="header-mobile__item">
+					<div class="ic-hamburger js-btn-menu">
+						<span></span>
+					</div>
+				</div>
+
+				<div class="header-mobile__item">
+					<a href="<?if($USER->IsAuthorized()){?>/personal/<?}else{?>/auth/<?}?>">
+						<svg class="icon ic-lock" width="16" height="20">
+							<use xlink:href="<?=SITE_TEMPLATE_PATH?>/assets/sprites/sprite.svg#ic-lock"></use>
+						</svg>
+					</a>
+				</div>
+
+				<div class="header-mobile__item js-mobile-contacts">
+					<svg class="icon ic-mobile" width="20" height="20">
+						<use xlink:href="<?=SITE_TEMPLATE_PATH?>/assets/sprites/sprite.svg#ic-mobile"></use>
+					</svg>
+				</div>
+
+				<div class="header-mobile__item">
+					<a href="/personal/cart/">
+						<svg class="icon ic-cart" width="21" height="21">
+							<use xlink:href="<?=SITE_TEMPLATE_PATH?>/assets/sprites/sprite.svg#ic-cart"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+
 			<div class="header-top">
 				<div class="container-fluid">
 					<div class="row">
@@ -240,7 +271,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 									</div>
 								</div>
 	
-								<div class="header-contacts">
+								<div class="header-contacts js-header-contacts">
 									<div class="header-contacts__item">
 										<div class="header-contacts__title header-contacts__title_hover">
 											<span class="js-contact-opt">Оптовый отдел</span>
@@ -360,11 +391,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div>
 		</div>
 	
-	
 		<main class="main">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-3">
+					<div class="col-lg-3">
 						<?$APPLICATION->IncludeFile(
 							SITE_DIR."include/header/menu.php",
 							Array(),
@@ -372,12 +402,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						);?>
 					</div>
 
-					<div class="col-9">
+					<div class="col-lg-9">
 						<?php if ($IS_MAIN == 'N'): ?>
-							<?$APPLICATION->IncludeFile(
-								SITE_DIR."include/header/breadcrumb.php",
-								Array(),
-								Array("MODE"=>"html")
+							<?$APPLICATION->IncludeComponent(
+								"bitrix:breadcrumb",
+								"gopro",
+								Array(
+									"COMPOSITE_FRAME_MODE" => "A",
+									"COMPOSITE_FRAME_TYPE" => "AUTO",
+									"PATH" => "",
+									"SITE_ID" => "s1",
+									"START_FROM" => "0"
+								)
 							);?>
 							
 							<div class="page-header">

@@ -53,3 +53,14 @@
 	color: #EDC0CC;
 	opacity: 1;
 }
+
+@media (max-width: 767px) {
+	.subscribe__label{
+		text-align: center;
+		margin-bottom: 15px;
+	}
+
+	.subscribe-form{display: block;}
+	.subscribe-form__btn{margin: 12px 0 0;}
+	.subscribe-form__btn .btn{width: 100%;}
+}

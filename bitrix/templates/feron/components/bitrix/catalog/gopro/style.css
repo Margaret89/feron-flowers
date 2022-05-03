@@ -2,7 +2,7 @@
 	width:100%;
 }
 .catalog .sidebar{
-	width:250px;
+	width:100%;
 	float:left;
 }
 .catalog .sidebar ul {
@@ -13,9 +13,6 @@
 }
 .catalog .sidebar ul > li {
 	list-style-type: none;
-}
-.catalog .prods{
-	margin-left:250px;
 }
 .catalog .prods .borlef{
 	border-left:1px solid #F2F2F2;

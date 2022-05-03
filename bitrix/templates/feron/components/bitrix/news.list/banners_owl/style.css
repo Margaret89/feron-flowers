@@ -198,13 +198,13 @@
 	font-size:26px;
 }
 
-@media screen and (max-width:1010px){
+@media screen and (max-width:991px){
 	body.adaptive .aroundowlslider1{
 		min-height:0px;
-		margin-top:5px;
 		margin-left:0px;
 	}
 }
+
 @media screen and (max-width:885px){
 	body.adaptive .aroundowlslider1 .owl-dots{
 		position:static;
@@ -239,6 +239,9 @@
 	body.adaptive .aroundowlslider1 .tmsg .message{
 		display:none;
 	}
+}
+@media (max-width: 767px) {
+	body.adaptive .aroundowlslider1{margin: -31px -15px 0;}
 }
 @media screen and (max-width:750px) and (min-width:481px){
 	body.adaptive .aroundowlslider1 .item.product .text .name,
