@@ -305,7 +305,7 @@
 
 
 /*Buy button*/
-.btn.product-item-detail-buy-button{
+/*.btn.product-item-detail-buy-button{
 	width:100%;
 	max-width: 250px;
 	display: block;
@@ -317,7 +317,7 @@
 	position: relative;
 	margin: 0 auto 20px;
 }
-.product-item-detail-short-card-btn .btn.product-item-detail-buy-button{ margin: 0;}
+ .product-item-detail-short-card-btn .btn.product-item-detail-buy-button{ margin: 0;}
 .btn.product-item-detail-buy-button span{
 	line-height:16px;
 	display: inline-block;
@@ -334,7 +334,7 @@
 		 -o-transform: translateY(-50%);
 			transform: translateY(-50%);
 }
-.btn-link.product-item-detail-buy-button{height:25px;}
+.btn-link.product-item-detail-buy-button{height:25px;} */
 
 /* Slider */
 .product-item-detail-slider-container{

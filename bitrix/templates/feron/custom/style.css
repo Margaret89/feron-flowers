@@ -604,6 +604,201 @@ button.btn_blue.btn_border:hover{
 .ic-hamburger.active span::before {transition: top 0.3s ease 0s, transform 0.3s ease 0.3s;}
 .ic-hamburger.active span::after {transition: bottom 0.3s ease 0s, transform 0.3s ease 0.3s;}
 
+.product-item-detail-slider-block.product-item-detail-slider-block-square{padding-bottom: 34%;}
+
+.product-item-detail-slider-controls-image{
+	width: calc(20% - 10px);
+	height: 100px;
+	margin: 5px;
+	border: 1px solid #F3F3F3;
+	outline: none;
+}
+
+.product-item-detail-slider-controls-image img{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.product-item-detail-slider-controls-block{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -5px;
+	margin-right: -5px;
+	text-align: left;
+}
+
+.cat-element-main h1{margin-bottom: 20px;}
+
+.product-item-detail-pay-block{
+	border: 0;
+	padding: 0;
+}
+
+.product-item-detail-price-current{
+	font-size: 26px;
+	font-weight: 600;
+	color: #000;
+}
+
+.product-item-detail-info-container-title{
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.product-item-detail-info-container_line{
+	padding-top: 26px;
+	border-top: 1px solid #eee;
+}
+
+.product-item-quantity{font-weight: bold;}
+
+.product-item-detail-info-container .product-item-amount{
+	text-align: left;
+	padding: 0;
+}
+
+.product-item-amount-field-container{
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	border-radius: 6px;
+	overflow: hidden;
+	border: 1px solid #dedede;
+}
+
+.product-item-amount-field-btn-plus,
+.product-item-amount-field-btn-minus{
+	width: 40px;
+	height: 40px;
+	background: #f6f6f6;
+	border-radius: 0;
+}
+
+.product-item-amount-field{
+	height: 40px;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 40px;
+	border-left: 1px solid #dedede;
+	border-right: 1px solid #dedede;
+}
+
+.cat-min-price{
+	padding-top: 26px;
+	border-top: 1px solid #eee;
+	margin-top: 26px;
+	margin-bottom: 26px;
+}
+
+.cat-min-price__label{
+	font-size: 14px;
+	margin-bottom: 6px;
+}
+
+.cat-min-price__val{
+	font-size: 22px;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+.main-button-container{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-left: -6px;
+	margin-right: -6px;
+}
+
+.main-button-container .btn{margin: 6px;}
+
+.btn.product-item-detail-buy-button{
+	width: auto;
+	margin: 6px;
+}
+
+.cat-sales{
+	background: #f6f6f6;
+	border-radius: 6px;
+	padding: 22px 26px;
+}
+
+.cat-sales__title{
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 6px;
+}
+
+.cat-sales__item{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	padding: 12px 0;
+}
+
+.cat-sales__item:not(:last-child){border-bottom: 1px dashed #B6B6B6;}
+
+.cat-sales__label{font-size: 14px;}
+
+.cat-sales__val{
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	margin-left: 20px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #fff;
+	line-height: 23px;
+	text-align: center;
+	padding: 0 8px;
+	background: #489A3B;
+	border-radius: 3px;
+}
+
+.product-item-detail-tabs-list{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.product-item-detail-tab{
+	width: 100%;
+	position: relative;
+	text-align: center;
+}
+
+.product-item-detail-tab-link{
+	font-size: 18px;
+	font-weight: 600;
+	text-transform: none;
+	color: #aeaeae;
+	position: static;
+}
+
+.product-item-detail-tab-link:hover,
+.product-item-detail-tab.active .product-item-detail-tab-link{
+	color: #214496;
+	text-decoration: none;
+}
+
+.product-item-detail-tabs-container{border-bottom: 3px solid #eaeaea;}
+.product-item-detail-tab-link::after{bottom: -3px;}
+
 
 @media (max-width: 1199px) {
 	.header-contacts__item:first-child{display: none;}

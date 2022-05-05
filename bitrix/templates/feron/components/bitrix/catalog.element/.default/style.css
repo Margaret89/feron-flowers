@@ -318,7 +318,7 @@
 	margin: 0 auto 20px;
 }
 .product-item-detail-short-card-btn .btn.product-item-detail-buy-button{ margin: 0;}
-.btn.product-item-detail-buy-button span{
+/* .btn.product-item-detail-buy-button span{
 	line-height:16px;
 	display: inline-block;
 	min-height:16px;
@@ -333,7 +333,7 @@
 		-ms-transform: translateY(-50%);
 		 -o-transform: translateY(-50%);
 			transform: translateY(-50%);
-}
+} */
 .btn-link.product-item-detail-buy-button{height:25px;}
 
 /* Slider */

@@ -1,8 +1,12 @@
 <?if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true)die();
 $this->setFrameMode(true);
-global $APPLICATION,$JSON;
+global $APPLICATION,$JSON;?>
 
-if (Bitrix\Main\Loader::includeModule( "sotbit.regions" ) ) 
+<div class="page-header">
+	<h1><?$APPLICATION->ShowTitle(false)?></h1>
+</div>
+
+<?if (Bitrix\Main\Loader::includeModule( "sotbit.regions" ) ) 
 { 
  $arResult = \Sotbit\Regions\Sale\Price::change( $arResult ); 
 } 

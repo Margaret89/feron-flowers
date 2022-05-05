@@ -415,10 +415,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 									"START_FROM" => "0"
 								)
 							);?>
-							
-							<div class="page-header">
-								<h1><?$APPLICATION->ShowTitle(false)?></h1>
-							</div>
+
+							<?$hideHeader = $APPLICATION->GetProperty("hide_header");?>
+
+							<?if($hideHeader != 'Y'){?>
+								<div class="page-header">
+									<h1><?$APPLICATION->ShowTitle(false)?></h1>
+								</div>
+							<?}?>
 						<?php endif; ?>
 
 

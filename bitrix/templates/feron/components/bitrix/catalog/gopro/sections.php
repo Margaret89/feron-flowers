@@ -5,9 +5,13 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 $this->setFrameMode(true);
 
 if (!\Bitrix\Main\Loader::includeModule('redsign.favorite'))
-	return;
+	return;?>
+    
+<div class="page-header">
+    <h1><?$APPLICATION->ShowTitle(false)?></h1>
+</div>
 
-$APPLICATION->IncludeComponent(
+<?$APPLICATION->IncludeComponent(
     'bitrix:catalog.section.list',
     'gopro',
     array(
