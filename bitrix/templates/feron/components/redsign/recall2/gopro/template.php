@@ -22,7 +22,7 @@ if($arResult['GOOD_SEND']=='Y') {
 					if($arField['CONTROL_NAME']!='RS_AUTHOR_COMMENT') {
 						?><input<?if($arField['CONTROL_NAME']=='RS_AUTHOR_PHONE'):?> class="maskPhone"<?endif;?> type="text" name="<?=$arField['CONTROL_NAME']?>" value="<?=$arField['HTML_VALUE']?>" placeholder="<?=GetMessage('MSG_'.$arField['CONTROL_NAME'])?><?if(in_array($arField['CONTROL_NAME'], $arParams['REQUIRED_FIELDS'])):?>*<?endif;?>:" /><?
 					} else {
-						?><textarea name="<?=$arField['CONTROL_NAME']?>" placeholder="<?=GetMessage('MSG_'.$arField['CONTROL_NAME'])?><?if(in_array($arField['CONTROL_NAME'], $arParams['REQUIRED_FIELDS'])):?>*<?endif;?>:"><?=$arField['HTML_VALUE']?></textarea><?
+						?><textarea name="<?=$arField['CONTROL_NAME']?>" placeholder="<?if($arParams['MSG_'.$arField['CONTROL_NAME']]){?><?=$arParams['MSG_'.$arField['CONTROL_NAME']]?><?}else{?><?=GetMessage('MSG_'.$arField['CONTROL_NAME'])?><?}?><?if(in_array($arField['CONTROL_NAME'], $arParams['REQUIRED_FIELDS'])):?>*<?endif;?>:"><?=$arField['HTML_VALUE']?></textarea><?
 					}
 				?></div><?
 			}
@@ -39,7 +39,7 @@ if($arResult['GOOD_SEND']=='Y') {
 		// /CAPTCHA
 		
 		?><div class="line buttons clearfix"><?
-			?><input class="btn btn1" type="submit" name="submit" value="<?=GetMessage('MSG_SUBMIT')?>"><?
+			?><input class="btn" type="submit" name="submit" value="<?=GetMessage('MSG_SUBMIT')?>"><?
 		?></div><?
 		
 	?></form><?

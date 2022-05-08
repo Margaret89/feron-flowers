@@ -557,10 +557,16 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 										'HIDE_ICONS' => 'Y'
 									)
 									);*/?>
-									<?/*<div class="cat-min-price">
-										<div class="cat-min-price__label">Минимальная сумма заказа:</div>
-										<div class="cat-min-price__val">2500 руб.</div>
-									</div>*/?>
+									<?$APPLICATION->IncludeComponent(
+										"bitrix:main.include",
+										"",
+										Array(
+											"AREA_FILE_SHOW" => "file",
+											"AREA_FILE_SUFFIX" => "inc",
+											"EDIT_TEMPLATE" => "",
+											"PATH" => "/include/min-price.php"
+										)
+									);?>
 
 									<div data-entity="main-button-container" class="main-button-container">
 										<div id="<?=$itemIds['BASKET_ACTIONS_ID']?>" style="display: <?=($actualItem['CAN_BUY'] ? '' : 'none')?>;">
@@ -590,6 +596,7 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 											}
 											?>
 										</div>
+										<a class="fancyajax fancybox.ajax feedback btn btn_blue btn_border" href="<?=SITE_DIR?>include/popup/one-click/" title="<?=Loc::getMessage('T_ONE_CLICK')?>"><?=Loc::getMessage('T_ONE_CLICK')?></a>
 										<?
 										if ($showSubscribe)
 										{
@@ -659,6 +666,8 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 				</div>
 			</div>
 		</div>
+		
+		
 		<div class="row">
 			<div class="col-xs-12">
 				<?
@@ -836,6 +845,10 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 							<?
 						}
 
+						echo '111111';
+
+						echo $arParams['BLOG_USE'];
+
 						if ($arParams['USE_COMMENTS'] === 'Y')
 						{
 							?>
@@ -863,7 +876,8 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 									'EMAIL_NOTIFY' => $arParams['BLOG_EMAIL_NOTIFY'],
 									'AJAX_POST' => 'Y',
 									'SHOW_SPAM' => 'Y',
-									'SHOW_RATING' => 'N',
+									'SHOW_RATING' => 'Y',
+									"RATING_TYPE" => "like_graphic",
 									'FB_TITLE' => '',
 									'FB_USER_ADMIN_ID' => '',
 									'FB_COLORSCHEME' => 'light',
