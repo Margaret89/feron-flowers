@@ -899,7 +899,8 @@ if ($IS_AJAXPAGES=='Y' || $IS_SORTERCHANGE=='Y') {
 // /bigdata
 
 // tabs
-?><div class="detailtabs <?if($arParams['DETAIL_TABS_VIEW']=='anchor'):?>anchor<?else:?>tabs<?endif;?>"><?
+?>
+<?/*<div class="detailtabs <?if($arParams['DETAIL_TABS_VIEW']=='anchor'):?>anchor<?else:?>tabs<?endif;?>"><?
 	?><div class="headers clearfix"><?
 		$APPLICATION->ShowViewContent('TABS_HTML_HEADERS');
 		if( $arParams['USE_REVIEW']=='Y' && IsModuleInstalled('forum') )
@@ -941,4 +942,4 @@ if ($IS_AJAXPAGES=='Y' || $IS_SORTERCHANGE=='Y') {
 			?></div><?
 		}
 	?></div><!-- /contents --><?
-?></div>
+?></div>*/?>

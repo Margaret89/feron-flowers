@@ -338,7 +338,7 @@ $APPLICATION->SetTitle("Каталог товаров");
 		"MESS_BTN_COMPARE" => "Сравнение",
 		"MESS_BTN_DETAIL" => "Подробнее",
 		"MESS_BTN_SUBSCRIBE" => "Подписаться",
-		"MESS_COMMENTS_TAB" => "Комментарии",
+		"MESS_COMMENTS_TAB" => "Отзывы",
 		"MESS_DESCRIPTION_TAB" => "Описание",
 		"MESS_NOT_AVAILABLE" => "Нет в наличии",
 		"MESS_PRICE_RANGES_TITLE" => "Цены",
@@ -540,7 +540,8 @@ $APPLICATION->SetTitle("Каталог товаров");
 			"compare" => array(
 				"ACTION_CODE" => "action",
 			),
-		)
+		),
+		"DETAIL_BLOG_USE" => "Y"
 	),
 	false
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -297,7 +297,7 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 							switch ($blockName)
 							{
 								case 'rating':
-									if ($arParams['USE_VOTE_RATING'] === 'Y')
+									/*if ($arParams['USE_VOTE_RATING'] === 'Y')
 									{
 										?>
 										<div class="product-item-detail-info-container">
@@ -323,9 +323,38 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 											?>
 										</div>
 										<?
-									}
+									}*/?>
 
-									break;
+									<?function num_word($value, $words, $show = true){//Функция склонения слов
+										$num = $value % 100;
+									
+										if ($num > 19) {
+											$num = $num % 10; 
+										}
+									
+										$out = ($show) ?  $value . ' ' : '';
+									
+										switch ($num) {
+											case 1:  $out .= $words[0]; break;
+											case 2: 
+											case 3: 
+											case 4:  $out .= $words[1]; break;
+											default: $out .= $words[2]; break;
+										}
+
+										return $out;
+									}?>
+
+									<div class="rating-wrap">
+										<div class="rating">
+											<div class="rating__content js-review-rating-page" style="width: <?=$arResult['NUM_RATING']?>%;"></div>
+										</div>
+
+										<div class="rating-wrap__label js-rating-wrap-label"><?=num_word($arResult['COUNT_REVIEW'], array('отзыв', 'отзыва', 'отзывов'))?></div>
+									</div>
+
+
+									<?break;
 
 								case 'price':
 									?>
@@ -667,7 +696,6 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 			</div>
 		</div>
 		
-		
 		<div class="row">
 			<div class="col-xs-12">
 				<?
@@ -739,7 +767,7 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 						<div class="product-item-detail-tabs-container">
 							<ul class="product-item-detail-tabs-list">
 								<?
-								if ($showDescription)
+								if (!empty($arResult['DETAIL_TEXT']) || !empty($arResult['DISPLAY_PROPERTIES']) || $arResult['SHOW_OFFERS_PROPS'])
 								{
 									?>
 									<li class="product-item-detail-tab active" data-entity="tab" data-value="description">
@@ -750,24 +778,12 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 									<?
 								}
 
-								if (!empty($arResult['DISPLAY_PROPERTIES']) || $arResult['SHOW_OFFERS_PROPS'])
-								{
-									?>
-									<li class="product-item-detail-tab" data-entity="tab" data-value="properties">
-										<a href="javascript:void(0);" class="product-item-detail-tab-link">
-											<span><?=$arParams['MESS_PROPERTIES_TAB']?></span>
-										</a>
-									</li>
-									<?
-								}
-
-
 								if ($arParams['USE_COMMENTS'] === 'Y')
 								{
 									?>
-									<li class="product-item-detail-tab" data-entity="tab" data-value="comments">
+									<li class="product-item-detail-tab js-tabs-page-item" data-entity="tab" data-value="comments">
 										<a href="javascript:void(0);" class="product-item-detail-tab-link">
-											<span><?=$arParams['MESS_COMMENTS_TAB']?></span>
+											<span><?=$arParams['MESS_COMMENTS_TAB']?>(<span class="js-review-count-page"><?=$arResult['COUNT_REVIEW']?></span>)</span>
 										</a>
 									</li>
 									<?
@@ -778,82 +794,53 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 					</div>
 				</div>
 				<div class="row" id="<?=$itemIds['TAB_CONTAINERS_ID']?>">
-					<div class="col-xs-12">
-						<?
-						if ($showDescription)
-						{
-							?>
-							<div class="product-item-detail-tab-content active" data-entity="tab-container" data-value="description"
-								itemprop="description">
-								<?
-								if (
-									$arResult['PREVIEW_TEXT'] != ''
-									&& (
-										$arParams['DISPLAY_PREVIEW_TEXT_MODE'] === 'S'
-										|| ($arParams['DISPLAY_PREVIEW_TEXT_MODE'] === 'E' && $arResult['DETAIL_TEXT'] == '')
-									)
-								)
-								{
-									echo $arResult['PREVIEW_TEXT_TYPE'] === 'html' ? $arResult['PREVIEW_TEXT'] : '<p>'.$arResult['PREVIEW_TEXT'].'</p>';
-								}
+					<div class="col-12">
+						<?if (!empty($arResult['DETAIL_TEXT']) || !empty($arResult['DISPLAY_PROPERTIES']) || $arResult['SHOW_OFFERS_PROPS']){?>
+							<div class="product-item-detail-tab-content active" data-entity="tab-container" data-value="description">
+								<?if (!empty($arResult['DETAIL_TEXT'])){?>
+									<div class="product-desc" itemprop="description">
+										<?=$arResult['~DETAIL_TEXT']?>
+									</div>
+								<?}?>
+								
+								<?if (!empty($arResult['DISPLAY_PROPERTIES'])){?>
+									<div class="product-detail-prop">
+										<?foreach ($arResult['DISPLAY_PROPERTIES'] as $property){?>
+											<div class="product-detail-prop__item">
+												<div class="product-detail-prop__label"><?=$property['NAME']?></div>
 
-								if ($arResult['DETAIL_TEXT'] != '')
-								{
-									echo $arResult['DETAIL_TEXT_TYPE'] === 'html' ? $arResult['DETAIL_TEXT'] : '<p>'.$arResult['DETAIL_TEXT'].'</p>';
-								}
-								?>
+												<div class="product-detail-prop__val"><?=(
+													is_array($property['DISPLAY_VALUE'])
+														? implode(' / ', $property['DISPLAY_VALUE'])
+														: $property['DISPLAY_VALUE']
+													)?>
+												</div>
+											</div>
+										<?}
+										unset($property);?>
+									</div>
+								<?}
+
+								if ($arResult['SHOW_OFFERS_PROPS']){?>
+									<dl class="product-item-detail-properties" id="<?=$itemIds['DISPLAY_PROP_DIV']?>"></dl>
+								<?}?>
 							</div>
-							<?
-						}
+						<?}
 
-						if (!empty($arResult['DISPLAY_PROPERTIES']) || $arResult['SHOW_OFFERS_PROPS'])
+					/*	if (!empty($arResult['DISPLAY_PROPERTIES']) || $arResult['SHOW_OFFERS_PROPS'])
 						{
 							?>
 							<div class="product-item-detail-tab-content" data-entity="tab-container" data-value="properties">
-								<?
-								if (!empty($arResult['DISPLAY_PROPERTIES']))
-								{
-									?>
-									<dl class="product-item-detail-properties">
-										<?
-										foreach ($arResult['DISPLAY_PROPERTIES'] as $property)
-										{
-											?>
-											<dt><?=$property['NAME']?></dt>
-											<dd><?=(
-												is_array($property['DISPLAY_VALUE'])
-													? implode(' / ', $property['DISPLAY_VALUE'])
-													: $property['DISPLAY_VALUE']
-												)?>
-											</dd>
-											<?
-										}
-										unset($property);
-										?>
-									</dl>
-									<?
-								}
-
-								if ($arResult['SHOW_OFFERS_PROPS'])
-								{
-									?>
-									<dl class="product-item-detail-properties" id="<?=$itemIds['DISPLAY_PROP_DIV']?>"></dl>
-									<?
-								}
-								?>
+								
 							</div>
 							<?
-						}
-
-						echo '111111';
-
-						echo $arParams['BLOG_USE'];
+						}*/
 
 						if ($arParams['USE_COMMENTS'] === 'Y')
 						{
 							?>
 							<div class="product-item-detail-tab-content" data-entity="tab-container" data-value="comments" style="display: none;">
-								<?
+								<?/*
 								$componentCommentsParams = array(
 									'ELEMENT_ID' => $arResult['ID'],
 									'ELEMENT_CODE' => '',
@@ -899,8 +886,11 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 									$componentCommentsParams,
 									$component,
 									array('HIDE_ICONS' => 'Y')
-								);
+								);*/
 								?>
+
+
+								<div class="js-review-container" data-product="<?=$arResult['CODE']?>"></div>
 							</div>
 							<?
 						}
@@ -1309,7 +1299,7 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 	<div class="product-item-detail-tabs-container-fixed hidden-xs" id="<?=$itemIds['TABS_PANEL_ID']?>">
 		<ul class="product-item-detail-tabs-list">
 			<?
-			if ($showDescription)
+			if (!empty($arResult['DETAIL_TEXT']) || !empty($arResult['DISPLAY_PROPERTIES']) || $arResult['SHOW_OFFERS_PROPS'])
 			{
 				?>
 				<li class="product-item-detail-tab active" data-entity="tab" data-value="description">
@@ -1320,21 +1310,10 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 				<?
 			}
 
-			if (!empty($arResult['DISPLAY_PROPERTIES']) || $arResult['SHOW_OFFERS_PROPS'])
-			{
-				?>
-				<li class="product-item-detail-tab" data-entity="tab" data-value="properties">
-					<a href="javascript:void(0);" class="product-item-detail-tab-link">
-						<span><?=$arParams['MESS_PROPERTIES_TAB']?></span>
-					</a>
-				</li>
-				<?
-			}
-
 			if ($arParams['USE_COMMENTS'] === 'Y')
 			{
 				?>
-				<li class="product-item-detail-tab" data-entity="tab" data-value="comments">
+				<li class="product-item-detail-tab js-tabs-page-item" data-entity="tab" data-value="comments">
 					<a href="javascript:void(0);" class="product-item-detail-tab-link">
 						<span><?=$arParams['MESS_COMMENTS_TAB']?></span>
 					</a>
@@ -1738,6 +1717,26 @@ if ($arParams['DISPLAY_COMPARE'])
 	});
 
 	var <?=$obName?> = new JCCatalogElement(<?=CUtil::PhpToJSObject($jsParams, false, true)?>);
+
+	// Обновляем отзывы
+	$(function() {
+		$('.js-tabs-page-item[data-value="comments"]').on('click', function(){
+			var codeProduct = $('.js-review-container').data('product');
+
+			var strData = 'code='+codeProduct;
+
+
+			$.ajax({
+				url: '/ajax/review.php?code=<?=$arResult['CODE']?>',
+				data: strData,
+				context: $('.js-review-container'),
+				success: function(result){
+					$(this).html(result);
+				}
+			});
+		});
+	});
+</script>
 </script>
 <?
 unset($actualItem, $itemIds, $jsParams);

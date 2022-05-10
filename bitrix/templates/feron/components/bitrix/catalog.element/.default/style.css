@@ -830,10 +830,7 @@
 .product-item-detail-tab-link:active:after{height: 6px;}
 
 .product-item-detail-tab-content{padding:25px 0;}
-@media (max-width: 991px){
-	.product-item-detail-tabs-container{ display: none !important;}
-	.product-item-detail-tab-content{ display: block !important;}
-}
+
 /*Tab fixed*/
 .product-item-detail-tabs-container-fixed{
 	position: fixed;
