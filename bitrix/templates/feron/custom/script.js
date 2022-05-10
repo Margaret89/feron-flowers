@@ -48,45 +48,56 @@ $(document).ready(function() {
 	});
 
 	// Открыть/Закрыть контакты на мобильнике
-	var openHeaderContacts = false;
-	var openMenu = false;
-
 	$('.js-mobile-contacts').on('click', function(){
-		if(openHeaderContacts == false){
-			if(openMenu == true){
-				$('.js-catalogmenucolumn').removeClass('open');
-				$('.js-body').removeClass('no-scroll');
-				$('.js-btn-menu').removeClass('active');
-				openMenu = false;
-			}
-
-			openHeaderContacts = true;
+		if($(this).hasClass('active')){
+			$(this).removeClass('active');
+			$('.js-header-contacts').toggleClass('open');
+			$('.js-body').removeClass('no-scroll');
 		}else{
-			openHeaderContacts = false;
-		}
+			$('.js-form-search-wrap').removeClass('open');
+			$('.js-mobile-search').removeClass('active');
+			$('.js-catalogmenucolumn').removeClass('open');
+			$('.js-btn-menu').removeClass('active');
 
-		$(this).toggleClass('active');
-		$('.js-header-contacts').toggleClass('open');
-		$('.js-body').toggleClass('no-scroll');
+			$(this).addClass('active');
+			$('.js-header-contacts').addClass('open');
+			$('.js-body').addClass('no-scroll');
+		}
 	});
 
-	// Открыть/Закрыть контакты на мобильнике
+	// Открыть/Закрыть меню на мобильнике
 	$('.js-btn-menu').on('click', function(){
-		if(openMenu == false){
-			if(openHeaderContacts == true){
-				$('.js-header-contacts').removeClass('open');
-				$('.js-body').removeClass('no-scroll');
-				$('.js-mobile-contacts').removeClass('active');
-				openHeaderContacts = false;
-			}
-
-			openMenu = true;
+		if($(this).hasClass('active')){
+			$(this).removeClass('active');
+			$('.js-catalogmenucolumn').toggleClass('open');
+			$('.js-body').removeClass('no-scroll');
 		}else{
-			openMenu = false;
-		}
+			$('.js-header-contacts').removeClass('open');
+			$('.js-mobile-contacts').removeClass('active');
+			$('.js-form-search-wrap').removeClass('open');
+			$('.js-mobile-search').removeClass('active');
 
-		$(this).toggleClass('active');
-		$('.js-catalogmenucolumn').toggleClass('open');
-		$('.js-body').toggleClass('no-scroll');
+			$(this).addClass('active');
+			$('.js-catalogmenucolumn').addClass('open');
+			$('.js-body').addClass('no-scroll');
+		}
+	});
+
+	// Открыть/Закрыть поиск на мобильнике
+	$('.js-mobile-search').on('click', function(){
+		if($(this).hasClass('active')){
+			$(this).removeClass('active');
+			$('.js-form-search-wrap').toggleClass('open');
+			$('.js-body').removeClass('no-scroll');
+		}else{
+			$('.js-header-contacts').removeClass('open');
+			$('.js-mobile-contacts').removeClass('active');
+			$('.js-catalogmenucolumn').removeClass('open');
+			$('.js-btn-menu').removeClass('active');
+
+			$(this).addClass('active');
+			$('.js-form-search-wrap').addClass('open');
+			$('.js-body').addClass('no-scroll');
+		}
 	});
 }); 

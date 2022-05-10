@@ -203,6 +203,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</svg>
 				</div>
 
+				<div class="header-mobile__item js-mobile-search">
+					<svg class="icon ic-search" width="20" height="20">
+						<use xlink:href="<?=SITE_TEMPLATE_PATH?>/assets/sprites/sprite.svg#ic-search"></use>
+					</svg>
+				</div>
+
 				<div class="header-mobile__item">
 					<a href="/personal/cart/">
 						<svg class="icon ic-cart" width="21" height="21">

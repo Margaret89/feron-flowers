@@ -881,11 +881,7 @@ button.btn_blue.btn_border:hover{
 	.header-contacts .btn:hover{color: #fff;}
 
 	.header-main{padding: 15px 0 20px;}
-
-	.header-main .mini-cart,
-	.header-main .form-search-wrap{
-		display: none;
-	}
+	.header-main .mini-cart{display: none;}
 
 	.header-main__content{
 		-webkit-box-pack: center;
@@ -898,6 +894,29 @@ button.btn_blue.btn_border:hover{
 		text-align: center;
 	}
 
+	.header-main .form-search-wrap{
+		display: block;
+		width: 100vw;
+		height: calc(100vh - 50px);
+		background: #9D002C;
+		margin: 0;
+		padding: 20px 15px;
+		position: fixed;
+		top: 50px;
+		right: 100%;
+		z-index: 1000;
+		transition: right 0.2s ease 0s;
+		overflow-y: auto;
+	}
+
+	.header-main .form-search-wrap.open{right: 0;}
+
+	.title-search-result{
+		top: 116px!important;
+		left: 0!important;
+		z-index: 10000!important;
+	}
+
 	#bx-panel ~ .body .header-contacts{
 		height: calc(100vh - 89px);
 		top: 89px;
@@ -907,6 +926,13 @@ button.btn_blue.btn_border:hover{
 		height: calc(100vh - 89px);
 		top: 89px;
 	}
+
+	#bx-panel ~ .body .header-main .form-search-wrap{
+		height: calc(100vh - 89px);
+		top: 89px;
+	}
+
+	#bx-panel ~ .body .title-search-result{top: 156px!important;}
 }
 
 @media (min-width: 768px) {

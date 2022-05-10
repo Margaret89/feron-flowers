@@ -12,7 +12,7 @@ if(strlen($CONTAINER_ID) <= 0)
 $CONTAINER_ID = CUtil::JSEscape($CONTAINER_ID);
 
 if($arParams["SHOW_INPUT"]!=="N"){?>
-	<div id="<?=$CONTAINER_ID?>" class="form-search-wrap">
+	<div id="<?=$CONTAINER_ID?>" class="form-search-wrap js-form-search-wrap">
 		<form class="form-search">
 			<input class="text" id="<?=$INPUT_ID?>" type="text" name="q" value="" autocomplete="off" placeholder="<?=GetMessage("RSGOPRO_PLACEHOLDER")?>" title="<?=GetMessage("RSGOPRO_PLACEHOLDER")?>"/>
 			
