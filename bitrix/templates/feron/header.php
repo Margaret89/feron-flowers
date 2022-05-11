@@ -170,6 +170,7 @@ src="https://www.facebook.com/tr?id=505726086647009&ev=PageView
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/87405445" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+<script src="//code.jivo.ru/widget/a2V8K8ub6k" async></script>
 </head>
 <body class="prop_option_<?=$prop_option?><?if($adaptive == 'Y'):?> adaptive<?endif;?> js-body">
 <!-- Google Tag Manager (noscript) -->
