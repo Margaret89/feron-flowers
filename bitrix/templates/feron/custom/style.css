@@ -1016,6 +1016,16 @@ button.btn_blue.btn_border:hover{
 	.product-item-detail-short-card-fixed.active + .product-item-detail-tabs-container-fixed.active{top: 0;}
 }
 
+/* catalog */
+@media (max-width: 767px) {
+	.catalogsorter .template,
+	.catalogsorter .sortaou{
+		float: none;
+	}
+
+	.catalogsorter .sortaou{margin: 15px 0 0;}
+}
+
 /* form */
 .form-site__title{
 	font-size: 20px;

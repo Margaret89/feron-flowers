@@ -358,7 +358,7 @@ $APPLICATION->SetTitle("Каталог товаров");
 		"OFF_SMALLPOPUP" => "N",
 		"PAGER_BASE_LINK" => "",
 		"PAGER_BASE_LINK_ENABLE" => "N",
-		"PAGER_DESC_NUMBERING" => "Y",
+		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "3600",
 		"PAGER_PARAMS_NAME" => "arrPager",
 		"PAGER_SHOW_ALL" => "Y",

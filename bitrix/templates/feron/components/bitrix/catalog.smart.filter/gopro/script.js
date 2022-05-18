@@ -59,29 +59,29 @@ function RSGoPro_FilterJScrollPaneReinitialize() {
 
 
 function RSGoPro_FixedFilterWinScroll() {
-	if( RSGoPro_filtren && RSGoPro_filtren.length>0 ) {
-		RSGoPro_offsetTopFilterH = RSGoPro_offsetTopFilter + RSGoPro_filtren.outerHeight(true);
-		RSGoPro_offsetTopContentH = RSGoPro_content.offset().top + RSGoPro_content.outerHeight(true)
-		if( window.pageYOffset > RSGoPro_offsetTopFilter ) {
-			RSGoPro_filtren.addClass('fixed');
-		} else {
-			RSGoPro_filtren.removeClass('fixed');
-		}
-		if( window.pageYOffset + RSGoPro_filtren.outerHeight(true) > RSGoPro_content.offset().top + RSGoPro_content.outerHeight(true) ) {
-			RSGoPro_filtren.addClass('stop').css('top',(RSGoPro_offsetTopContentH - RSGoPro_offsetTopFilterH)+'px');
-		} else {
-			RSGoPro_filtren.removeClass('stop').css('top','0px');
-		}
-	}
+	// if( RSGoPro_filtren && RSGoPro_filtren.length>0 ) {
+	// 	RSGoPro_offsetTopFilterH = RSGoPro_offsetTopFilter + RSGoPro_filtren.outerHeight(true);
+	// 	RSGoPro_offsetTopContentH = RSGoPro_content.offset().top + RSGoPro_content.outerHeight(true)
+	// 	if( window.pageYOffset > RSGoPro_offsetTopFilter ) {
+	// 		RSGoPro_filtren.addClass('fixed');
+	// 	} else {
+	// 		RSGoPro_filtren.removeClass('fixed');
+	// 	}
+	// 	if( window.pageYOffset + RSGoPro_filtren.outerHeight(true) > RSGoPro_content.offset().top + RSGoPro_content.outerHeight(true) ) {
+	// 		RSGoPro_filtren.addClass('stop').css('top',(RSGoPro_offsetTopContentH - RSGoPro_offsetTopFilterH)+'px');
+	// 	} else {
+	// 		RSGoPro_filtren.removeClass('stop').css('top','0px');
+	// 	}
+	// }
 }
 function RSGoPro_FixedFilter() {
-	if( RSGoPro_filtren && RSGoPro_filtren.length>0 ) 	{
-		RSGoPro_offsetTopFilter = RSGoPro_filtren.offset().top;
-		RSGoPro_offsetTopFilterH = RSGoPro_offsetTopFilter + RSGoPro_filtren.outerHeight(true);
-		RSGoPro_offsetTopContent = RSGoPro_content.offset().top;
-		RSGoPro_offsetTopContentH = RSGoPro_offsetTopContent + RSGoPro_content.outerHeight(true);
-		window.onscroll = RSGoPro_FixedFilterWinScroll;
-	}
+	// if( RSGoPro_filtren && RSGoPro_filtren.length>0 ) 	{
+	// 	RSGoPro_offsetTopFilter = RSGoPro_filtren.offset().top;
+	// 	RSGoPro_offsetTopFilterH = RSGoPro_offsetTopFilter + RSGoPro_filtren.outerHeight(true);
+	// 	RSGoPro_offsetTopContent = RSGoPro_content.offset().top;
+	// 	RSGoPro_offsetTopContentH = RSGoPro_offsetTopContent + RSGoPro_content.outerHeight(true);
+	// 	window.onscroll = RSGoPro_FixedFilterWinScroll;
+	// }
 }
 
 function RSGoPro_FilterAjax() {
